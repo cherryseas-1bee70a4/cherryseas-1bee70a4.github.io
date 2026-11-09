@@ -1,0 +1,1455 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日大赛寸止挑战 - 耐力挑战赛程与记录</title>
+  <meta name="description" content="每日大赛寸止挑战汇集每日耐力赛事、寸止挑战规则、选手记录与训练方法。提供赛事日程、挑战类型、成绩排行、经验分享与常见问题解答，适合关注自律耐力训练的挑战者浏览。">
+  <meta name="keywords" content="耐力挑战赛程, 寸止规则, 挑战记录榜, 自律训练方法, 每日赛事安排">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23fbbf24' stroke-width='2.5'/%3E%3Cpath d='M16 9v7l4 3' stroke='%23fbbf24' stroke-width='2.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-soft: #111a2e;
+      --panel: #16213a;
+      --panel-2: #1c2947;
+      --line: #2a3a5c;
+      --ink: #e8edf7;
+      --ink-soft: #a9b6d0;
+      --ink-mute: #7286a8;
+      --brand: #fbbf24;
+      --brand-soft: #f59e0b;
+      --accent: #38bdf8;
+      --accent-2: #a78bfa;
+      --ok: #34d399;
+      --radius: 14px;
+      --radius-sm: 9px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      --wrap: 1360px;
+      --header-h: 60px;
+      --notice-h: 40px;
+      --sticky: calc(var(--notice-h) + var(--header-h));
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 15% -10%, #1c2b4a 0%, var(--bg) 55%);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul, ol { margin: 0; padding: 0; list-style: none; }
+    h1, h2, h3, h4 { margin: 0; line-height: 1.35; font-weight: 700; }
+    p { margin: 0 0 .8em; }
+    button { font-family: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+    /* ============ 吸顶公告条 ============ */
+    .notice {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      height: var(--notice-h);
+      display: flex;
+      align-items: center;
+      background: linear-gradient(90deg, #3b2a08, #4a3410 40%, #3b2a08);
+      border-bottom: 1px solid #6b4f14;
+      color: #fde68a;
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    .notice .wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+    }
+    .notice .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(251,191,36,.18);
+      flex: none;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .notice b { color: #fff7d6; font-weight: 700; }
+    .notice .more { margin-left: auto; color: #fbbf24; font-weight: 600; white-space: nowrap; }
+    .notice .more:hover { text-decoration: underline; }
+
+    /* ============ 吸顶页头 ============ */
+    .site-header {
+      position: sticky;
+      top: var(--notice-h);
+      z-index: 50;
+      height: var(--header-h);
+      background: rgba(11,17,32,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .wrap {
+      width: 100%;
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+    .header-inner {
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: none;
+    }
+    .brand svg { width: 32px; height: 32px; flex: none; }
+    .brand-text {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      white-space: nowrap;
+      background: linear-gradient(90deg, #fde68a, #fbbf24 60%, #f59e0b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-main {
+      display: flex;
+      gap: 4px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-main::-webkit-scrollbar { display: none; }
+    .nav-main a {
+      padding: 6px 11px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      transition: .18s;
+    }
+    .nav-main a:hover { color: var(--ink); background: var(--panel); }
+    .header-tools {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: none;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 6px 4px 12px;
+      gap: 6px;
+    }
+    .search-box input {
+      background: transparent;
+      border: 0;
+      color: var(--ink);
+      font-size: 13px;
+      width: 130px;
+      outline: none;
+      font-family: inherit;
+    }
+    .search-box input::placeholder { color: var(--ink-mute); }
+    .btn-mini {
+      border: 0;
+      background: var(--brand);
+      color: #211500;
+      font-weight: 700;
+      font-size: 12.5px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      transition: .18s;
+    }
+    .btn-mini:hover { background: #fcd34d; }
+
+    /* ============ 首屏 ============ */
+    .hero {
+      position: relative;
+      padding: 46px 0 40px;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 82% 20%, rgba(251,191,36,.14), transparent 42%),
+        radial-gradient(circle at 62% 90%, rgba(56,189,248,.10), transparent 40%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: var(--brand);
+      background: rgba(251,191,36,.10);
+      border: 1px solid rgba(251,191,36,.30);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 4.2vw, 46px);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      background: linear-gradient(100deg, #ffffff 0%, #fde68a 60%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-desc {
+      font-size: 15.5px;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin-bottom: 22px;
+    }
+    .hero-desc strong { color: var(--ink); font-weight: 600; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s;
+    }
+    .btn-primary { background: var(--brand); color: #1c1200; }
+    .btn-primary:hover { background: #fcd34d; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+    .btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+
+    .hero-visual {
+      position: relative;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-visual svg { width: 100%; max-width: 400px; height: auto; }
+
+    /* ============ 主布局：三栏 ============ */
+    .layout {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 250px;
+      gap: 30px;
+      padding: 38px 0 20px;
+      align-items: start;
+    }
+    .col-left { position: sticky; top: calc(var(--sticky) + 16px); }
+    .col-right { position: sticky; top: calc(var(--sticky) + 16px); }
+
+    /* 左频道索引 */
+    .side-block {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 14px;
+      margin-bottom: 18px;
+    }
+    .side-title {
+      font-size: 12.5px;
+      letter-spacing: 1.5px;
+      color: var(--ink-mute);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .channel-list li { margin-bottom: 2px; }
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 9px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      transition: .16s;
+    }
+    .channel-list a:hover { background: var(--panel); color: var(--brand); }
+    .channel-list .ico {
+      width: 6px; height: 6px; border-radius: 2px;
+      background: var(--accent);
+      flex: none;
+    }
+    .channel-list li:nth-child(2n) .ico { background: var(--accent-2); }
+    .channel-list li:nth-child(3n) .ico { background: var(--brand); }
+
+    /* 右辅助栏 */
+    .rank-list { counter-reset: rk; }
+    .rank-list li {
+      counter-increment: rk;
+      display: flex;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13.5px;
+    }
+    .rank-list li:last-child { border-bottom: 0; }
+    .rank-list li::before {
+      content: counter(rk);
+      font-weight: 800;
+      font-size: 12px;
+      color: var(--ink-mute);
+      width: 18px;
+      flex: none;
+      font-variant-numeric: tabular-nums;
+    }
+    .rank-list li:nth-child(-n+3)::before { color: var(--brand); }
+    .rank-list .rk-main { min-width: 0; }
+    .rank-list .rk-name { color: var(--ink); font-weight: 600; display: block; line-height: 1.4; }
+    .rank-list .rk-meta { color: var(--ink-mute); font-size: 12px; }
+
+    .update-flow li {
+      display: flex;
+      gap: 9px;
+      font-size: 13px;
+      padding: 7px 0;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+    .update-flow .t {
+      color: var(--ink-mute);
+      font-size: 11.5px;
+      flex: none;
+      padding-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ============ 主内容通用 ============ */
+    .main-col { min-width: 0; }
+    section.block {
+      margin-bottom: 44px;
+      scroll-margin-top: calc(var(--sticky) + 14px);
+    }
+    .block-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .block-head h2 {
+      font-size: 21px;
+      letter-spacing: .5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .block-head h2::before {
+      content: "";
+      width: 4px;
+      height: 20px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, var(--brand), var(--brand-soft));
+      flex: none;
+    }
+    .block-head .sub { font-size: 12.5px; color: var(--ink-mute); white-space: nowrap; }
+    .block-head .sub a { color: var(--brand); }
+
+    /* 概览 */
+    .overview p { color: var(--ink-soft); font-size: 15px; }
+    .overview strong { color: var(--ink); font-weight: 600; }
+    .overview .lead {
+      font-size: 15.5px;
+      color: var(--ink);
+      background: var(--bg-soft);
+      border-left: 3px solid var(--brand);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 18px;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: .2s;
+    }
+    .card:hover { border-color: #3d5278; transform: translateY(-2px); box-shadow: var(--shadow); }
+    .card-thumb { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #0f172a; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: .4s; }
+    .card:hover .card-thumb img { transform: scale(1.04); }
+    .card-thumb .badge {
+      position: absolute;
+      top: 9px; left: 9px;
+      background: rgba(11,17,32,.82);
+      backdrop-filter: blur(6px);
+      color: var(--brand);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(251,191,36,.35);
+    }
+    .card-body { padding: 13px 15px 15px; display: flex; flex-direction: column; flex: 1; }
+    .card-body h3 { font-size: 15.5px; margin-bottom: 6px; line-height: 1.45; }
+    .card-body h3 a:hover { color: var(--brand); }
+    .card-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 10px; flex: 1; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .tag {
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 2px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .tag.hot { color: var(--brand); border-color: rgba(251,191,36,.35); background: rgba(251,191,36,.08); }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11.5px;
+      color: var(--ink-mute);
+      border-top: 1px dashed var(--line);
+      padding-top: 9px;
+    }
+    .card-meta .heat { color: var(--brand-soft); font-weight: 600; }
+    .card-meta .score { color: var(--ok); font-weight: 600; }
+
+    /* 最新更新列表 */
+    .update-list { display: flex; flex-direction: column; gap: 2px; }
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      transition: .18s;
+    }
+    .update-item:hover { background: var(--bg-soft); border-color: var(--line); }
+    .update-item .time {
+      flex: none;
+      width: 62px;
+      font-size: 12px;
+      color: var(--brand);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+    }
+    .update-item .u-title { font-weight: 600; font-size: 14.5px; margin-bottom: 2px; }
+    .update-item .u-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+    .update-item .u-tag {
+      font-size: 11px;
+      color: var(--accent);
+      border: 1px solid rgba(56,189,248,.3);
+      border-radius: 5px;
+      padding: 1px 7px;
+      margin-left: 8px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .cat-item {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 14px 13px;
+      transition: .18s;
+      display: block;
+    }
+    .cat-item:hover { border-color: var(--brand); background: var(--panel); }
+    .cat-item .c-ico {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(251,191,36,.12);
+      color: var(--brand);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 9px;
+    }
+    .cat-item:nth-child(2n) .c-ico { background: rgba(56,189,248,.12); color: var(--accent); }
+    .cat-item:nth-child(3n) .c-ico { background: rgba(167,139,250,.12); color: var(--accent-2); }
+    .cat-item .c-name { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .cat-item .c-count { font-size: 11.5px; color: var(--ink-mute); }
+
+    /* 深度解析 */
+    .deep h3 {
+      font-size: 17px;
+      margin: 24px 0 10px;
+      color: var(--brand);
+      letter-spacing: .3px;
+    }
+    .deep h3:first-of-type { margin-top: 0; }
+    .deep p { color: var(--ink-soft); font-size: 14.5px; }
+    .deep strong { color: var(--ink); font-weight: 600; }
+    .deep ul { margin: 8px 0 14px; padding-left: 0; }
+    .deep ul li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .deep ul li::before {
+      content: "";
+      position: absolute;
+      left: 2px; top: 10px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+    }
+    .deep .callout {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+    .deep .callout b { color: var(--brand); }
+
+    /* 体验指南：编号步骤 */
+    .step-list { display: flex; flex-direction: column; gap: 14px; }
+    .step-item {
+      display: flex;
+      gap: 16px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .step-num {
+      flex: none;
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+      color: #1c1200;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .step-item h3 { font-size: 15px; margin-bottom: 4px; }
+    .step-item p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    details {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    details[open] { border-color: #3d5278; }
+    summary {
+      padding: 14px 18px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: .16s;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: "+";
+      color: var(--brand);
+      font-size: 17px;
+      font-weight: 700;
+      width: 16px;
+      flex: none;
+      text-align: center;
+    }
+    details[open] summary::before { content: "−"; }
+    summary:hover { color: var(--brand); }
+    details .faq-body {
+      padding: 0 18px 15px 44px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .comment-item {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 13px 15px;
+    }
+    .comment-head { display: flex; align-items: center; gap: 9px; margin-bottom: 7px; }
+    .avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b4a6b, #24314d);
+      color: var(--brand);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      flex: none;
+    }
+    .comment-head .name { font-size: 13px; font-weight: 600; }
+    .comment-head .c-time { font-size: 11px; color: var(--ink-mute); margin-left: auto; }
+    .comment-text { font-size: 13px; color: var(--ink-soft); line-height: 1.65; }
+    .comment-text b { color: var(--ink); font-weight: 600; }
+
+    /* 资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 4px; }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 13px 4px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .news-item:last-child { border-bottom: 0; }
+    .news-date {
+      flex: none;
+      width: 76px;
+      font-size: 12px;
+      color: var(--ink-mute);
+      font-variant-numeric: tabular-nums;
+      padding-top: 3px;
+    }
+    .news-item h3 { font-size: 14.5px; margin-bottom: 3px; }
+    .news-item h3 a:hover { color: var(--brand); }
+    .news-item p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+
+    /* 相关推荐标签索引 */
+    .tag-index { display: flex; flex-wrap: wrap; gap: 9px; }
+    .tag-index a {
+      font-size: 13px;
+      padding: 7px 14px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink-soft);
+      transition: .18s;
+    }
+    .tag-index a:hover { border-color: var(--brand); color: var(--brand); background: var(--panel); }
+    .tag-index a .n { color: var(--ink-mute); font-size: 11.5px; margin-left: 5px; }
+
+    /* 榜单/时间线补充板块 */
+    .timeline { position: relative; padding-left: 20px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--brand), var(--line));
+      border-radius: 2px;
+    }
+    .tl-item { position: relative; padding: 0 0 18px 14px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -18px; top: 6px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--brand);
+    }
+    .tl-item .tl-time { font-size: 12px; color: var(--brand); font-weight: 700; margin-bottom: 2px; }
+    .tl-item .tl-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .tl-item .tl-desc { font-size: 13px; color: var(--ink-soft); }
+
+    /* 结果反馈 */
+    .search-feedback {
+      display: none;
+      background: var(--bg-soft);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+    .search-feedback.show { display: block; }
+
+    /* 页尾 */
+    .site-footer {
+      margin-top: 30px;
+      border-top: 1px solid var(--line);
+      background: var(--bg-soft);
+      padding: 40px 0 26px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 28px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand svg { width: 30px; height: 30px; }
+    .footer-brand .fb-text { font-size: 17px; font-weight: 800; color: var(--brand); }
+    .footer-desc { font-size: 13px; color: var(--ink-mute); line-height: 1.7; max-width: 300px; }
+    .footer-col h4 { font-size: 13px; color: var(--ink); margin-bottom: 12px; letter-spacing: .5px; }
+    .footer-col li { margin-bottom: 7px; }
+    .footer-col a { font-size: 12.5px; color: var(--ink-mute); transition: .16s; }
+    .footer-col a:hover { color: var(--brand); }
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--ink-mute);
+    }
+    .footer-bottom .note { color: var(--ink-mute); opacity: .85; }
+
+    /* ============ 响应式 ============ */
+    @media (max-width: 1024px) {
+      .layout { grid-template-columns: 1fr; gap: 0; }
+      .col-left, .col-right { position: static; }
+      .col-left { display: none; }
+      .col-right {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 10px;
+      }
+      .hero-inner { grid-template-columns: 1fr; gap: 20px; }
+      .hero-visual { height: 180px; order: -1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .cat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    @media (max-width: 740px) {
+      :root { --notice-h: auto; --header-h: auto; --sticky: 0px; }
+      .notice { position: static; height: auto; padding: 8px 0; font-size: 12px; }
+      .notice .wrap { flex-wrap: wrap; gap: 6px; }
+      .notice .more { margin-left: 0; }
+      .site-header { position: static; height: auto; }
+      .header-inner { flex-wrap: wrap; height: auto; padding: 10px 0; gap: 12px; }
+      .nav-main { order: 3; width: 100%; flex-wrap: wrap; overflow: visible; }
+      .header-tools { margin-left: auto; }
+      .search-box input { width: 96px; }
+      .hero { padding: 30px 0; }
+      .hero h1 { font-size: 28px; }
+      .hero-visual { display: none; }
+      .layout { padding-top: 26px; }
+      .card-grid, .comment-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .col-right { grid-template-columns: 1fr; }
+      .block-head { flex-wrap: wrap; }
+      .update-item { flex-wrap: wrap; gap: 4px; }
+      .update-item .time { width: auto; }
+      .news-item { flex-wrap: wrap; gap: 4px; }
+      .news-date { width: auto; }
+      .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+      .block-head h2 { font-size: 18px; }
+      .hero-actions .btn { flex: 1; justify-content: center; }
+    }
+    @media (max-width: 380px) {
+      .wrap { padding: 0 14px; }
+      .cat-grid { grid-template-columns: 1fr; }
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- ========== 吸顶公告条 ========== -->
+  <div class="notice" role="region" aria-label="站内公告">
+    <div class="wrap">
+      <span class="dot" aria-hidden="true"></span>
+      <span><b>11 月 8 日</b> 新增 6 条寸止挑战记录与 2 组耐力赛程</span>
+      <a href="#latest" class="more">查看更新 →</a>
+    </div>
+  </div>
+
+  <!-- ========== 吸顶页头 ========== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="/" class="brand" aria-label="每日大赛寸止挑战首页">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#0f172a" stroke="#2a3a5c"/>
+          <circle cx="16" cy="16" r="9" stroke="#fbbf24" stroke-width="2.5"/>
+          <path d="M16 9v7l4 3" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="2" fill="#38bdf8"/>
+        </svg>
+        <span class="brand-text">每日大赛寸止挑战</span>
+      </a>
+      <nav class="nav-main" aria-label="主题导航">
+        <a href="#overview">赛事概览</a>
+        <a href="#featured">精选挑战</a>
+        <a href="#latest">最新更新</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep">深度解析</a>
+        <a href="#guide">体验指南</a>
+        <a href="#faq">常见问答</a>
+        <a href="#comments">用户评论</a>
+        <a href="#news">相关资讯</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="搜挑战/选手/规则" aria-label="站内搜索">
+          <button class="btn-mini" id="searchBtn" type="button">查找</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== 首屏 ========== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="hero-tag">◆ 耐力自律 · 每日记录</span>
+        <h1 id="hero-title">每日大赛寸止挑战</h1>
+        <p class="hero-desc">
+          汇聚 <strong>寸止挑战</strong> 的每日赛程、选手记录与训练方法。这里整理耐力赛规则、寸止时长排行、挑战类型对比，以及适合新手的入门路径，帮助你了解这项自律训练的具体玩法与判断标准。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#featured">查看今日精选挑战</a>
+          <a class="btn btn-ghost" href="#guide">新手入门路径</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 360 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hgA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fbbf24" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#f59e0b" stop-opacity=".15"/>
+            </linearGradient>
+            <linearGradient id="hgB" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#38bdf8" stop-opacity=".7"/>
+              <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="180" cy="120" r="88" stroke="#2a3a5c" stroke-width="1.5"/>
+          <circle cx="180" cy="120" r="66" stroke="#2a3a5c" stroke-width="1.2" stroke-dasharray="3 6"/>
+          <circle cx="180" cy="120" r="44" stroke="url(#hgA)" stroke-width="7" stroke-linecap="round" stroke-dasharray="230 280" transform="rotate(-90 180 120)"/>
+          <circle cx="180" cy="120" r="44" stroke="url(#hgB)" stroke-width="7" stroke-linecap="round" stroke-dasharray="90 280" transform="rotate(40 180 120)"/>
+          <path d="M180 78v42l26 18" stroke="#fde68a" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="180" cy="120" r="4.5" fill="#fbbf24"/>
+          <text x="180" y="216" text-anchor="middle" fill="#7286a8" font-size="12" font-family="sans-serif" letter-spacing="2">寸止 · 计时 · 记录</text>
+          <circle cx="286" cy="52" r="5" fill="#38bdf8" opacity=".8"/>
+          <circle cx="72" cy="186" r="4" fill="#a78bfa" opacity=".7"/>
+          <circle cx="300" cy="176" r="3" fill="#fbbf24" opacity=".9"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 主布局：三栏 ========== -->
+  <div class="wrap layout">
+
+    <!-- 左频道索引 -->
+    <aside class="col-left" aria-label="频道索引">
+      <div class="side-block">
+        <div class="side-title">挑战频道</div>
+        <ul class="channel-list">
+          <li><a href="#featured"><span class="ico"></span>寸止计时赛</a></li>
+          <li><a href="#featured"><span class="ico"></span>耐力长局</a></li>
+          <li><a href="#categories"><span class="ico"></span>呼吸控制</a></li>
+          <li><a href="#categories"><span class="ico"></span>专注力挑战</a></li>
+          <li><a href="#latest"><span class="ico"></span>每日记录</a></li>
+          <li><a href="#guide"><span class="ico"></span>新手训练</a></li>
+          <li><a href="#deep"><span class="ico"></span>规则解读</a></li>
+          <li><a href="#comments"><span class="ico"></span>选手社区</a></li>
+          <li><a href="#news"><span class="ico"></span>赛事资讯</a></li>
+          <li><a href="#rank"><span class="ico"></span>成绩排行</a></li>
+        </ul>
+      </div>
+      <div class="side-block">
+        <div class="side-title">今日数据</div>
+        <ul class="update-flow">
+          <li><span class="t">09:30</span><span>寸止计时赛第 42 期开放</span></li>
+          <li><span class="t">10:15</span><span>选手「静水」刷新 8 分钟记录</span></li>
+          <li><span class="t">11:40</span><span>呼吸控制组新增 3 条打卡</span></li>
+          <li><span class="t">14:00</span><span>耐力长局复赛名单公布</span></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main-col">
+
+      <!-- 1. 主题领域概览 -->
+      <section class="block overview" id="overview">
+        <div class="block-head">
+          <h2>寸止挑战领域概览</h2>
+          <span class="sub">2026 年 11 月 8 日更新</span>
+        </div>
+        <div class="lead">
+          <strong>每日大赛寸止挑战</strong> 是一类围绕耐力、专注与自我控制展开的每日赛事活动，核心在于「寸止」——在接近极限时停止、调整、再继续。
+        </div>
+        <p>
+          这项挑战包含多个具体方向：<strong>寸止计时赛</strong> 要求在指定动作下坚持尽可能长的时间；<strong>耐力长局</strong> 则把单次挑战拉长到 30 分钟以上，考验节奏分配；<strong>呼吸控制</strong> 侧重呼吸频率的稳定与恢复；<strong>专注力挑战</strong> 把注意力维持作为主要评判维度。每个方向都有独立的计时规则和记录标准。
+        </p>
+        <p>
+          当前值得关注的具体内容有：11 月 8 日开放的寸止计时赛第 42 期，选手「静水」以 8 分 12 秒刷新本季度记录；耐力长局复赛定于 11 月 12 日进行；呼吸控制组本周新增 3 条连续打卡记录。这些条目都能在对应板块找到详细数据和参与方式。
+        </p>
+        <p>
+          对刚接触的人来说，理解 <strong>寸止挑战规则</strong> 比盲目追求时长更重要：如何判定「寸止」时机、中途停顿是否计入、不同组别的计时差异，都会直接影响成绩有效性。本页后续的规则解读与体验指南会围绕这些具体判断展开。
+        </p>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="block" id="featured">
+        <div class="block-head">
+          <h2>精选寸止挑战条目</h2>
+          <span class="sub"><a href="#categories">按分类浏览</a></span>
+        </div>
+        <div class="card-grid">
+
+          <article class="card" data-search="寸止计时赛第42期 计时 耐力">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/cunzhi-jishi42/400/300" width="400" height="300" alt="寸止计时赛第42期计时器界面" loading="lazy">
+              <span class="badge">计时赛</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#featured">寸止计时赛第 42 期</a></h3>
+              <p class="card-desc">标准计时组，单次动作维持 5 分钟以上进入排行。本期开放 3 个时段，适合已有基础的挑战者冲击个人最好成绩。</p>
+              <div class="tag-row">
+                <span class="tag hot">今日开放</span>
+                <span class="tag">计时组</span>
+                <span class="tag">5 分钟门槛</span>
+              </div>
+              <div class="card-meta"><span class="heat">参与 1,284 人</span><span class="score">记录 8:12</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="耐力长局复赛 30分钟 节奏">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/naili-changju11/400/300" width="400" height="300" alt="耐力长局复赛现场计时屏" loading="lazy">
+              <span class="badge">长局</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#featured">耐力长局复赛 11 月场</a></h3>
+              <p class="card-desc">30 分钟连续挑战，中途允许两次 10 秒调整。复赛名单已公布，重点看节奏分配与后程恢复策略。</p>
+              <div class="tag-row">
+                <span class="tag">复赛</span>
+                <span class="tag hot">11-12 开赛</span>
+                <span class="tag">节奏分配</span>
+              </div>
+              <div class="card-meta"><span class="heat">晋级 36 人</span><span class="score">均时 26:40</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="呼吸控制四拍法 呼吸 稳定">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/huxi-kongzhi07/400/300" width="400" height="300" alt="呼吸控制四拍法节奏示意" loading="lazy">
+              <span class="badge">呼吸组</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#featured">呼吸控制四拍法</a></h3>
+              <p class="card-desc">吸气 4 秒、屏息 4 秒、呼气 4 秒、停顿 4 秒。以 12 轮为一组，适合在寸止间隙稳定心率，本周打卡人数明显上升。</p>
+              <div class="tag-row">
+                <span class="tag">四拍节奏</span>
+                <span class="tag">心率稳定</span>
+                <span class="tag hot">本周热门</span>
+              </div>
+              <div class="card-meta"><span class="heat">打卡 862 次</span><span class="score">完成率 74%</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="静水 8分12秒 记录 选手">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/jingshui-record08/400/300" width="400" height="300" alt="选手静水刷新寸止记录瞬间" loading="lazy">
+              <span class="badge">记录</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#featured">选手「静水」8 分 12 秒记录</a></h3>
+              <p class="card-desc">在寸止计时赛中完成 8 分 12 秒的有效维持，刷新本季度记录。其分段策略为前 3 分钟匀速、中段降频、末段恢复。</p>
+              <div class="tag-row">
+                <span class="tag hot">季度记录</span>
+                <span class="tag">分段策略</span>
+                <span class="tag">计时组</span>
+              </div>
+              <div class="card-meta"><span class="heat">观看 5,241</span><span class="score">有效判定</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="专注力挑战 视觉追踪 10分钟">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/zhuanzhu-shijue13/400/300" width="400" height="300" alt="专注力挑战视觉追踪训练画面" loading="lazy">
+              <span class="badge">专注组</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#featured">专注力挑战 · 视觉追踪</a></h3>
+              <p class="card-desc">在 10 分钟内保持对移动目标的持续注视，每偏移一次扣 15 秒。适合训练长时间注意力，与寸止计时形成互补。</p>
+              <div class="tag-row">
+                <span class="tag">视觉追踪</span>
+                <span class="tag">10 分钟</span>
+                <span class="tag">注意力</span>
+              </div>
+              <div class="card-meta"><span class="heat">参与 640 人</span><span class="score">均分 7.8</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="寸止规则手册 判定 有效">
+            <div class="card-thumb">
+              <img src="https://picsum.photos/seed/guize-shouce21/400/300" width="400" height="300" alt="寸止挑战规则手册封面" loading="lazy">
+              <span class="badge">规则</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#deep">寸止规则判定手册</a></h3>
+              <p class="card-desc">整理计时组、长局组、呼吸组三套判定标准，重点说明「寸止时机」的认定与常见无效情形，是参赛前必读的基础条目。</p>
+              <div class="tag-row">
+                <span class="tag">判定标准</span>
+                <span class="tag">无效情形</span>
+                <span class="tag">参赛必读</span>
+              </div>
+              <div class="card-meta"><span class="heat">收藏 2,106</span><span class="score">更新 11-06</span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="block" id="latest">
+        <div class="block-head">
+          <h2>最新更新与赛程动态</h2>
+          <span class="sub">截至 11 月 8 日</span>
+        </div>
+        <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+        <ul class="update-list">
+          <li class="update-item"><span class="time">今天 09:30</span><div><div class="u-title">寸止计时赛第 42 期开放<span class="u-tag">计时组</span></div><div class="u-desc">开放 3 个时段，单次维持 5 分钟以上即可进入本期排行。</div></div></li>
+          <li class="update-item"><span class="time">今天 10:15</span><div><div class="u-title">「静水」刷新 8 分 12 秒记录<span class="u-tag">记录</span></div><div class="u-desc">有效判定通过，暂列本季度计时组第一。</div></div></li>
+          <li class="update-item"><span class="time">今天 11:40</span><div><div class="u-title">呼吸控制组新增 3 条打卡<span class="u-tag">呼吸组</span></div><div class="u-desc">均为四拍法 12 轮完整完成，最快用时 9 分 30 秒。</div></div></li>
+          <li class="update-item"><span class="time">今天 14:00</span><div><div class="u-title">耐力长局复赛名单公布<span class="u-tag">长局</span></div><div class="u-desc">共 36 人晋级，11 月 12 日 30 分钟连续挑战。</div></div></li>
+          <li class="update-item"><span class="time">昨天 20:10</span><div><div class="u-title">专注力挑战新增视觉追踪场次<span class="u-tag">专注组</span></div><div class="u-desc">每周二、四、六晚开放，单场 10 分钟。</div></div></li>
+          <li class="update-item"><span class="time">昨天 16:30</span><div><div class="u-title">规则判定手册更新 11 月版<span class="u-tag">规则</span></div><div class="u-desc">补充长局组两次调整的计时细则，明确无效动作。</div></div></li>
+          <li class="update-item"><span class="time">11 月 6 日</span><div><div class="u-title">寸止入门 7 天计划上线<span class="u-tag">训练</span></div><div class="u-desc">从 2 分钟基础维持到 5 分钟门槛的分日安排。</div></div></li>
+          <li class="update-item"><span class="time">11 月 5 日</span><div><div class="u-title">计时赛第 41 期成绩归档<span class="u-tag">归档</span></div><div class="u-desc">本期共 1,102 人有效参与，均时 6 分 48 秒。</div></div></li>
+          <li class="update-item"><span class="time">11 月 3 日</span><div><div class="u-title">新增「低心率组」分类<span class="u-tag">分类</span></div><div class="u-desc">以挑战过程中平均心率作为辅助评判维度。</div></div></li>
+          <li class="update-item"><span class="time">11 月 1 日</span><div><div class="u-title">10 月月度记录榜发布<span class="u-tag">榜单</span></div><div class="u-desc">计时组、长局组、呼吸组各取前十名。</div></div></li>
+        </ul>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="block" id="categories">
+        <div class="block-head">
+          <h2>挑战分类入口</h2>
+          <span class="sub">按类型定位</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="#featured"><span class="c-ico">⏱</span><div class="c-name">寸止计时赛</div><div class="c-count">计时组 · 18 期</div></a>
+          <a class="cat-item" href="#featured"><span class="c-ico">⏳</span><div class="c-name">耐力长局</div><div class="c-count">30 分钟以上 · 9 场</div></a>
+          <a class="cat-item" href="#featured"><span class="c-ico">🌬</span><div class="c-name">呼吸控制</div><div class="c-count">四拍法 · 12 组</div></a>
+          <a class="cat-item" href="#featured"><span class="c-ico">◎</span><div class="c-name">专注力挑战</div><div class="c-count">视觉追踪 · 6 场</div></a>
+          <a class="cat-item" href="#guide"><span class="c-ico">✦</span><div class="c-name">新手训练</div><div class="c-count">7 天计划 · 入门</div></a>
+          <a class="cat-item" href="#deep"><span class="c-ico">§</span><div class="c-name">规则解读</div><div class="c-count">判定 · 无效情形</div></a>
+          <a class="cat-item" href="#rank"><span class="c-ico">≡</span><div class="c-name">成绩排行</div><div class="c-count">周榜 · 季度榜</div></a>
+          <a class="cat-item" href="#comments"><span class="c-ico">✎</span><div class="c-name">选手社区</div><div class="c-count">经验 · 复盘</div></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="block deep" id="deep">
+        <div class="block-head">
+          <h2>寸止挑战类型差异与评判维度</h2>
+          <span class="sub">规则与策略</span>
+        </div>
+
+        <h3>寸止计时赛与耐力长局的计时逻辑差异</h3>
+        <p>
+          <strong>寸止计时赛</strong> 的计时以单次有效维持为核心，一旦出现明显中断即结束本轮，成绩取中断前的时间。它的关键在于「一次成型」：前段节奏过快容易在后段崩掉，因此多数选手采用前 3 分钟匀速、中段主动降频、末段小幅恢复的分段策略。
+        </p>
+        <p>
+          <strong>耐力长局</strong> 则允许在 30 分钟内进行两次、每次 10 秒的调整，计时不会因调整而清零，但调整次数用尽后的中断仍会终止挑战。这意味着长局的评判维度除了总时长，还包括调整时机的选择——把两次调整留到后程还是前中段，会明显影响最终结果。
+        </p>
+        <ul>
+          <li>计时赛：单次维持、中断即止，重点在节奏稳定与末段控制。</li>
+          <li>长局：总时长累计，两次调整的分配是核心变量。</li>
+          <li>两者共用同一套「有效动作」判定，但中断后的处理规则不同。</li>
+        </ul>
+
+        <h3>呼吸控制组为什么被单独列出</h3>
+        <p>
+          呼吸控制组并不直接比拼时长，而是以 <strong>节奏完成度</strong> 为主要标准：四拍法 12 轮为一组，要求吸气、屏息、呼气、停顿各 4 秒，全程心率波动控制在设定区间内。它常被当作计时赛前的准备环节，因为稳定的呼吸能显著降低后程的心率漂移。
+        </p>
+        <p>
+          在具体判断上，呼吸组更看重重现性而非单次极限。连续三天完成 12 轮且节奏偏差小于 0.5 秒，比一次勉强完成更受认可。这也是它与其他组别最大的区别：它衡量的是稳定性，不是峰值。
+        </p>
+
+        <div class="callout">
+          <b>判断要点：</b>看一个寸止挑战成绩是否有效，先确认所属组别，再核对有效动作、中断处理和调整次数三项，任何一项不符都会导致判定无效。
+        </div>
+
+        <h3>成绩有效性的三个常见判定维度</h3>
+        <p>
+          第一是 <strong>动作标准</strong>：计时赛要求身体姿态在维持期间保持在规定范围内，明显位移会被记为中断。第二是 <strong>调整合规</strong>：长局组的两次调整必须在规定窗口内使用，超时或超次数都不计入。第三是 <strong>记录完整</strong>：挑战过程需要有连续计时记录，断点超过规定秒数即视为本轮结束。
+        </p>
+        <ul>
+          <li>动作标准：关注姿态是否在规定区间内，微小晃动通常不判中断。</li>
+          <li>调整合规：长局两次、每次 10 秒，用尽后不再补。</li>
+          <li>记录完整：计时断点超过 3 秒即本轮终止，成绩保留至断点。</li>
+        </ul>
+
+        <h3>不同基础的人该优先看哪类条目</h3>
+        <p>
+          零基础的人优先看 <strong>呼吸控制四拍法</strong> 和 <strong>7 天入门计划</strong>，先把 2 分钟稳定维持做扎实，再进入计时赛。有 3 分钟以上基础的人可以直接对照计时赛第 42 期的分段策略，重点看中段降频的具体做法。已经能稳定完成 5 分钟的人，适合转向长局组，练习两次调整的分配。
+        </p>
+        <p>
+          选择条目时，优先看带具体分段数据和时间戳的记录，而不是只有总时长的成绩。分段数据能告诉你这个成绩是怎么构成的，也更容易复制到自己的训练里。
+        </p>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="block" id="guide">
+        <div class="block-head">
+          <h2>寸止挑战体验路径</h2>
+          <span class="sub">从入门到参赛</span>
+        </div>
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div><h3>先用呼吸控制稳定节奏</h3><p>从四拍法 12 轮开始，确认自己能在不刻意憋气的情况下保持 4 秒节奏。这一步决定后面计时赛的后程表现。</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div><h3>完成 7 天入门计划</h3><p>按日推进 2 分钟、3 分钟、4 分钟的基础维持，每天只记录一次有效成绩。第 7 天目标为稳定 5 分钟。</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div><h3>对照计时赛分段策略</h3><p>看第 42 期的前中后段分配，尝试复制「前 3 分钟匀速、中段降频」的做法，观察自己的中断点出现在哪一段。</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div><h3>进入长局组练习调整</h3><p>在 30 分钟框架里练习两次 10 秒调整，重点体会把调整留到后程与提前使用的差异。</p></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <div><h3>用专注力挑战补足注意力</h3><p>视觉追踪 10 分钟作为辅助训练，每周 2—3 次，帮助减少长局后程的注意力分散。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="block" id="faq">
+        <div class="block-head">
+          <h2>寸止挑战常见问答</h2>
+          <span class="sub">规则与入门</span>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>寸止计时赛一般多久更新一期？</summary>
+            <div class="faq-body">目前计时赛以周为单位更新，第 42 期于 11 月 8 日开放，下一期预计在 11 月 15 日前公布时段。每期开放 3 个时段，成绩在当期内有效。</div>
+          </details>
+          <details>
+            <summary>寸止计时赛和耐力长局有什么区别？</summary>
+            <div class="faq-body">计时赛以单次有效维持为核心，中断即止；长局允许两次 10 秒调整，计总时长。前者考验一次成型的节奏控制，后者考验调整时机的分配。</div>
+          </details>
+          <details>
+            <summary>第一次接触寸止挑战，从哪个条目开始看比较好？</summary>
+            <div class="faq-body">建议先看呼吸控制四拍法和 7 天入门计划，把 2 分钟稳定维持做出来，再对照计时赛第 42 期的分段策略。直接冲击长局容易因节奏失控提前中断。</div>
+          </details>
+          <details>
+            <summary>寸止挑战的成绩有效性通常怎么判定？</summary>
+            <div class="faq-body">主要看三项：动作是否在规定区间内、调整次数是否合规、计时记录是否连续。断点超过 3 秒即本轮终止，成绩保留到断点。三项中任一项不符会判无效。</div>
+          </details>
+          <details>
+            <summary>呼吸控制组的四拍法具体怎么做？</summary>
+            <div class="faq-body">吸气 4 秒、屏息 4 秒、呼气 4 秒、停顿 4 秒为一轮，12 轮为一组。要求全程节奏偏差小于 0.5 秒，心率波动控制在设定区间内，更看重重现性而不是单次极限。</div>
+          </details>
+          <details>
+            <summary>寸止挑战中途停顿会被判无效吗？</summary>
+            <div class="faq-body">要看组别。计时赛中途出现明显中断即结束本轮，成绩取中断前时间；长局的两次 10 秒调整属于规则内的停顿，不判无效。超出规定次数或时长的停顿才会计入无效。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="block" id="comments">
+        <div class="block-head">
+          <h2>选手与观众评论</h2>
+          <span class="sub">14 条讨论</span>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-item"><div class="comment-head"><span class="avatar">静</span><span class="name">静水</span><span class="c-time">今天 10:22</span></div><div class="comment-text">第 42 期的前 3 分钟匀速确实有效，我这次把中段降频提前了 30 秒，后程明显稳一些。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">林</span><span class="name">林间小路</span><span class="c-time">今天 09:51</span></div><div class="comment-text">四拍法练了一周，<b>屏息 4 秒</b>那一段最容易乱，感觉还是要从 8 轮开始比较稳。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">北</span><span class="name">北岸观潮</span><span class="c-time">今天 08:40</span></div><div class="comment-text">长局两次调整留到后 10 分钟用，成绩比之前提前用好多了，这个分配确实关键。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">陈</span><span class="name">陈默</span><span class="c-time">昨天 22:14</span></div><div class="comment-text">规则手册 11 月版把长局调整细则写清楚了，之前一直不确定超时算不算，现在明白了。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">夏</span><span class="name">夏至未至</span><span class="c-time">昨天 21:03</span></div><div class="comment-text">视觉追踪 10 分钟比想象中难，注意力偏移扣时之后总分掉得很快，还得练。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">阿</span><span class="name">阿岚</span><span class="c-time">昨天 19:36</span></div><div class="comment-text">7 天入门计划第 3 天卡在 3 分钟，感觉呼吸节奏没跟上，回去重做四拍法。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">周</span><span class="name">周屿</span><span class="c-time">11 月 6 日</span></div><div class="comment-text">计时赛第 41 期均时 6 分 48 秒，这个数据比总冠军更有参考价值，说明大部分人卡在 6 到 7 分钟。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">顾</span><span class="name">顾青</span><span class="c-time">11 月 6 日</span></div><div class="comment-text">低心率组这个分类挺有意思，不过心率设备不同误差不小，建议看趋势不看绝对值。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">程</span><span class="name">程野</span><span class="c-time">11 月 5 日</span></div><div class="comment-text">静水那段 8 分 12 秒的分段数据能公开的话就好了，光看总时长学不到东西。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">许</span><span class="name">许知远</span><span class="c-time">11 月 5 日</span></div><div class="comment-text">我从计时赛转长局，第一次用调整太早了，后程没得用，直接断了，教训。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">黎</span><span class="name">黎野</span><span class="c-time">11 月 4 日</span></div><div class="comment-text">专注力挑战和计时赛互补这个说法我认同，后程掉注意力基本就是动作变形的前兆。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">苏</span><span class="name">苏木</span><span class="c-time">11 月 3 日</span></div><div class="comment-text">新手建议别一上来就看排行榜，先看规则判定那篇，不然成绩无效了还不知道为什么。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">何</span><span class="name">何田田</span><span class="c-time">11 月 2 日</span></div><div class="comment-text">四拍法 12 轮完整做完大概 3 分多钟，但要求节奏偏差 0.5 秒内，实际很难，慢慢练吧。</div></div>
+          <div class="comment-item"><div class="comment-head"><span class="avatar">陆</span><span class="name">陆沉</span><span class="c-time">11 月 1 日</span></div><div class="comment-text">10 月月度榜计时组前十都在 7 分钟以上，长局组均时 26 分钟左右，两个组别的门槛差别挺明显。</div></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="block" id="news">
+        <div class="block-head">
+          <h2>寸止挑战相关资讯</h2>
+          <span class="sub">近期动态</span>
+        </div>
+        <ul class="news-list">
+          <li class="news-item"><span class="news-date">2026-11-08</span><div><h3><a href="#latest">寸止计时赛第 42 期今日开放三个时段</a></h3><p>本期继续采用 5 分钟门槛制，单次有效维持进入排行，首时段已于上午 9 时 30 分开放。</p></div></li>
+          <li class="news-item"><span class="news-date">2026-11-08</span><div><h3><a href="#featured">选手「静水」以 8 分 12 秒刷新本季度记录</a></h3><p>有效判定通过，分段策略为前 3 分钟匀速、中段降频、末段恢复，暂列计时组第一。</p></div></li>
+          <li class="news-item"><span class="news-date">2026-11-06</span><div><h3><a href="#deep">规则判定手册更新 11 月版，补充长局调整细则</a></h3><p>明确两次 10 秒调整的使用窗口，以及超时调整的计无效情形，便于参赛前核对。</p></div></li>
+          <li class="news-item"><span class="news-date">2026-11-05</span><div><h3><a href="#latest">计时赛第 41 期成绩归档，均时 6 分 48 秒</a></h3><p>本期共 1,102 人有效参与，中断点集中在第 5 到第 6 分钟区间，与往期基本一致。</p></div></li>
+          <li class="news-item"><span class="news-date">2026-11-03</span><div><h3><a href="#categories">新增「低心率组」分类，以心率稳定作为辅助评判</a></h3><p>挑战过程中平均心率进入设定区间可获得额外完成度，强调节奏稳定而非单纯拼时长。</p></div></li>
+          <li class="news-item"><span class="news-date">2026-11-01</span><div><h3><a href="#rank">10 月月度记录榜发布，三组各取前十名</a></h3><p>计时组前十均在 7 分钟以上，长局组均时 26 分钟左右，呼吸组以完成度排序。</p></div></li>
+        </ul>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="block" id="related">
+        <div class="block-head">
+          <h2>相关方向与延伸条目</h2>
+          <span class="sub">标签索引</span>
+        </div>
+        <div class="tag-index">
+          <a href="#deep">寸止时机判定<span class="n">规则</span></a>
+          <a href="#featured">分段节奏分配<span class="n">策略</span></a>
+          <a href="#featured">30 分钟长局训练<span class="n">耐力</span></a>
+          <a href="#featured">四拍呼吸法实战<span class="n">呼吸</span></a>
+          <a href="#featured">视觉追踪专注练习<span class="n">专注</span></a>
+          <a href="#guide">7 天入门计划拆解<span class="n">入门</span></a>
+          <a href="#rank">周榜与季度榜对照<span class="n">排行</span></a>
+          <a href="#deep">无效动作常见情形<span class="n">判定</span></a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：热门榜单 + 条目时间线 -->
+      <section class="block" id="rank">
+        <div class="block-head">
+          <h2>本周寸止挑战热门榜单</h2>
+          <span class="sub">截至 11 月 8 日</span>
+        </div>
+        <div class="card-grid" style="grid-template-columns:1fr;">
+          <div style="background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;">
+            <ol class="rank-list">
+              <li><div class="rk-main"><span class="rk-name">寸止计时赛第 42 期</span><span class="rk-meta">计时组 · 参与 1,284 人</span></div></li>
+              <li><div class="rk-main"><span class="rk-name">耐力长局复赛 11 月场</span><span class="rk-meta">长局 · 晋级 36 人</span></div></li>
+              <li><div class="rk-main"><span class="rk-name">静水 8 分 12 秒记录</span><span class="rk-meta">计时组 · 季度第一</span></div></li>
+              <li><div class="rk-main"><span class="rk-name">呼吸控制四拍法</span><span class="rk-meta">呼吸组 · 打卡 862 次</span></div></li>
+              <li><div class="rk-main"><span class="rk-name">专注力挑战视觉追踪</span><span class="rk-meta">专注组 · 均分 7.8</span></div></li>
+              <li><div class="rk-main"><span class="rk-name">寸止规则判定手册</span><span class="rk-meta">规则 · 收藏 2,106</span></div></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="timeline">
+        <div class="block-head">
+          <h2>寸止挑战近期条目时间线</h2>
+          <span class="sub">11 月 1 日 — 11 月 8 日</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">2026-11-08</div><div class="tl-title">计时赛第 42 期开放</div><div class="tl-desc">3 个时段，5 分钟门槛，当期内成绩有效。</div></div>
+          <div class="tl-item"><div class="tl-time">2026-11-08</div><div class="tl-title">静水刷新季度记录</div><div class="tl-desc">8 分 12 秒有效维持，分段数据已记录。</div></div>
+          <div class="tl-item"><div class="tl-time">2026-11-06</div><div class="tl-title">规则手册 11 月版更新</div><div class="tl-desc">补充长局调整窗口与无效情形。</div></div>
+          <div class="tl-item"><div class="tl-time">2026-11-05</div><div class="tl-title">第 41 期成绩归档</div><div class="tl-desc">均时 6 分 48 秒，中断点集中在中段。</div></div>
+          <div class="tl-item"><div class="tl-time">2026-11-03</div><div class="tl-title">低心率组分类上线</div><div class="tl-desc">以心率稳定作为辅助完成度维度。</div></div>
+          <div class="tl-item"><div class="tl-time">2026-11-01</div><div class="tl-title">10 月月度记录榜发布</div><div class="tl-desc">计时组、长局组、呼吸组各取前十名。</div></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="col-right" aria-label="辅助信息">
+      <div class="side-block">
+        <div class="side-title">本期热榜</div>
+        <ol class="rank-list">
+          <li><div class="rk-main"><span class="rk-name">寸止计时赛第 42 期</span><span class="rk-meta">1,284 人参与</span></div></li>
+          <li><div class="rk-main"><span class="rk-name">静水 8:12 记录</span><span class="rk-meta">季度第一</span></div></li>
+          <li><div class="rk-main"><span class="rk-name">四拍呼吸法</span><span class="rk-meta">打卡 862 次</span></div></li>
+          <li><div class="rk-main"><span class="rk-name">耐力长局复赛</span><span class="rk-meta">11-12 开赛</span></div></li>
+          <li><div class="rk-main"><span class="rk-name">视觉追踪专注场</span><span class="rk-meta">均分 7.8</span></div></li>
+          <li><div class="rk-main"><span class="rk-name">规则判定手册</span><span class="rk-meta">11 月更新</span></div></li>
+        </ol>
+      </div>
+      <div class="side-block">
+        <div class="side-title">最新记录</div>
+        <ul class="update-flow">
+          <li><span class="t">10:15</span><span>静水 · 计时组 8:12</span></li>
+          <li><span class="t">09:48</span><span>林间小路 · 呼吸组 12 轮</span></li>
+          <li><span class="t">昨天</span><span>北岸观潮 · 长局 28:40</span></li>
+          <li><span class="t">11-06</span><span>陈默 · 计时组 7:05</span></li>
+          <li><span class="t">11-05</span><span>许知远 · 长局 25:12</span></li>
+        </ul>
+      </div>
+      <div class="side-block">
+        <div class="side-title">快捷入口</div>
+        <ul class="channel-list">
+          <li><a href="#featured"><span class="ico"></span>今日精选挑战</a></li>
+          <li><a href="#guide"><span class="ico"></span>新手入门路径</a></li>
+          <li><a href="#deep"><span class="ico"></span>规则判定手册</a></li>
+          <li><a href="#faq"><span class="ico"></span>常见问答</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ========== 页尾 ========== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#0f172a" stroke="#2a3a5c"/>
+              <circle cx="16" cy="16" r="9" stroke="#fbbf24" stroke-width="2.5"/>
+              <path d="M16 9v7l4 3" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span class="fb-text">每日大赛寸止挑战</span>
+          </div>
+          <p class="footer-desc">聚合寸止计时赛、耐力长局、呼吸控制与专注力挑战的每日赛程、选手记录与规则解读，面向关注自律耐力训练的挑战者。</p>
+        </div>
+        <div class="footer-col">
+          <h4>挑战类型</h4>
+          <ul>
+            <li><a href="#featured">寸止计时赛</a></li>
+            <li><a href="#featured">耐力长局</a></li>
+            <li><a href="#featured">呼吸控制</a></li>
+            <li><a href="#featured">专注力挑战</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>规则与训练</h4>
+          <ul>
+            <li><a href="#deep">寸止判定标准</a></li>
+            <li><a href="#guide">7 天入门计划</a></li>
+            <li><a href="#faq">常见问答</a></li>
+            <li><a href="#latest">最新更新</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>社区与排行</h4>
+          <ul>
+            <li><a href="#rank">本周热门榜单</a></li>
+            <li><a href="#timeline">条目时间线</a></li>
+            <li><a href="#comments">选手评论</a></li>
+            <li><a href="#news">相关资讯</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 每日大赛寸止挑战</span>
+        <span class="note">部分内容为示例数据，仅用于展示页面结构</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var input = document.getElementById('searchInput');
+      var btn = document.getElementById('searchBtn');
+      var feedback = document.getElementById('searchFeedback');
+      var main = document.querySelector('.main-col');
+      if (!input || !btn || !main) return;
+
+      // 可搜索的模块：精选卡片、更新条目、评论、资讯、FAQ
+      var searchables = main.querySelectorAll('.card, .update-item, .comment-item, .news-item, details, .tl-item, .cat-item');
+
+      function clearHighlight() {
+        searchables.forEach(function (el) {
+          el.style.outline = '';
+          el.style.outlineOffset = '';
+        });
+      }
+
+      function doSearch() {
+        var q = input.value.trim().toLowerCase();
+        clearHighlight();
+        if (!q) {
+          feedback.classList.remove('show');
+          feedback.textContent = '';
+          return;
+        }
+        var hits = 0;
+        var firstHit = null;
+        searchables.forEach(function (el) {
+          var text = (el.textContent || '').toLowerCase();
+          var data = (el.getAttribute('data-search') || '').toLowerCase();
+          if (text.indexOf(q) !== -1 || data.indexOf(q) !== -1) {
+            hits++;
+            el.style.outline = '2px solid #fbbf24';
+            el.style.outlineOffset = '2px';
+            if (!firstHit) firstHit = el;
+          }
+        });
+        feedback.classList.add('show');
+        if (hits === 0) {
+          feedback.textContent = '没有找到与「' + input.value.trim() + '」相关的内容，换个关键词试试，例如：计时赛、四拍法、长局、判定。';
+        } else {
+          feedback.textContent = '找到 ' + hits + ' 条与「' + input.value.trim() + '」相关的内容，已用黄色描边标出。';
+          if (firstHit) {
+            firstHit.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
+
+      btn.addEventListener('click', doSearch);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          doSearch();
+        }
+      });
+      input.addEventListener('input', function () {
+        if (!input.value.trim()) {
+          clearHighlight();
+          feedback.classList.remove('show');
+          feedback.textContent = '';
+        }
+      });
+    })();
+  </script>
+</body>
+                                      </html>
